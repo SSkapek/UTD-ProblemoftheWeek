@@ -1,0 +1,33 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{palatino}
+\usepackage{yfonts}
+\usepackage{skull}
+\usepackage{lettrine}
+\begin{document}
+\begin{flushright}
+\textbf{Stephen Skapek\\UTD Problem of the Week\\9/27/2017}
+\end{flushright}
+
+\lettrine[realheight]{T}{his} problem gives us two positive integers $x$ and $y$ coprime. We were asked to find all the common prime factors of $x + y$ and $\frac{x^{2017} + y^{2017}}{x+y}$. To start, it was immediately obvious that 2017 is prime and that $x^{2017} + y^{2017}$ can be factored as $(x+y)*(x^{2016}y^{0}-x^{2015}y+x^{2014}y^{2}-\dots-x^{1}y^{2015}+x^{0}y^{2016})$. This means that we need to find all common prime factors of $x + y$ and $x^{2016}y^{0}-x^{2015}y+x^{2014}y^{2}-\dots-x^{1}y^{2015}+x^{0}y^{2016}$.\\
+We note that the second term is $\sum_{n=0}^{2016}(-1)^{n}x^{n}y^{2016-n}$. Consider the terms of this series modulo $x+y$. 
+\begin{align*}
+(-1)^{0}x^{0}y^{2016} \mod (x+y) &= y^{2016} \mod (x+y)\\
+(-1)^{1}x^{1}y^{2015} \mod (x+y) &= -x*y^{2015} \mod (x+y)\\
+(-1)^{2}x^{2}y^{2014} \mod (x+y) &= x^{2}y^{2014} \mod (x+y)\\
+\text{etc...}
+\end{align*}
+We note that $x = -y \mod (x+y)$, so we can rewrite each term as 
+\begin{align*}
+(-1)^{n}x^{n}y^{2016-n} \mod (x+y) &= (-1)^{n}x^{n}y^{2016-n} \mod (x+y)\\
+&= (-1)^{n}x^{n}(-x)^{2016-n} \mod(x+y)\\
+&= (-1)^{n}(-1)^{2016-n}x^{n}x^{2016-n} \mod(x+y)\\
+&= (-1)^{2016}x^{2016} \mod(x+y)\\
+&= x^{2016} \mod(x+y)
+\end{align*}
+We had 2017 terms in our summation, so this becomes $2017*x^{2016} \mod(x+y)$. We can find a similar expression for $y$. Thus, if a prime $p$ divides both $x+y$ and $\frac{x^{2017} + y^{2017}}{x+y}$, it must also divide $2017*x^{2016}$ and $2017*y^{2016}$. We note that $p$ cannot divide both $x$ and $y$ because of the intial condition of the problem. Thus, $p$ must divide $2017$. The only $p$ to do that is $2017$ itself, so we have the only common prime factor of  $x + y$ and $\frac{x^{2017} + y^{2017}}{x+y}$ can be $2017$. This implies that the only $x$ and $y$ that  $x + y$ and $\frac{x^{2017} + y^{2017}}{x+y}$ are not coprime are $x$ and $y$ such that $x+y \equiv 0 \mod 2017$.\\
+\begin{flushright}
+$\skull$
+\end{flushright}
+\end{document}

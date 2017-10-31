@@ -1,0 +1,23 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{palatino}
+\usepackage{yfonts}
+\usepackage{skull}
+\usepackage{lettrine}
+\begin{document}
+\begin{flushright}
+\textbf{Stephen Skapek\\UTD Problem of the Week\\9/7/2017}
+\end{flushright}
+
+\lettrine[realheight]{F}{ullerenes}, as defined, are any convex polyhedra with only hexagons or pentagons as faces. Furthermore, the degree of each vertex in our graph is 3. Without making any comment on the regularity of the faces of our structure, we note that it is isomorphic to a 3-connected simple planar graph. Hence, we can simply use the Euler characteristic of the plane, which is 2. We have the formula $V - E + F = 2$, where $V$, $E$, and $F$ refer to the number of vertices, edges, and faces respectively.  \par
+Define $F_5$ to be the number of pentagons and $F_6$ to be the number of hexagons in our graph, so that $$F = F_5 +F _6$$ Because each vertex contains the meeting of three faces, if we count the number of vertices in each hexagon and pentagon, there will have thrice the number of vertices in our graph, so $$V = \frac{5F_5+6F_6}{3}$$ Likewise, if we count the number of edges of each hexagon and pentagon, we will have counted the number of edges in our graph twice, so $$E = \frac{5F_5+6F_6}{2}$$
+Plugging these into Euler's characteristic formula, we get 
+\begin{gather*}
+\frac{5F_5+6F_6}{3} - \frac{5F_5+6F_6}{2} + F_5 +F _6 = 2\\
+\frac{5F_5}{3} - \frac{5F_5}{2} + F_5 + 2F_6 - 3F_6 + F_6 = 2\\
+\frac{10F_5 - 15F_5 + 6F_5}{6} = 2\\
+F_5 = 12\\
+\end{gather*}
+Thus, there will always be exactly \textbf{12} pentagons in a fullerene.
+\end{document}
